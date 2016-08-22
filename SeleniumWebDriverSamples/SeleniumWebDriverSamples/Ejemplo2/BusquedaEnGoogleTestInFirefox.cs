@@ -17,10 +17,14 @@ namespace SeleniumWebDriverSamples.Ejemplo2
         [TestMethod]
         public void Cuando_Busco_Selenium_WebDriver_Entonces_El_Primer_Resultado_Es_La_Pagina_De_Selenium()
         {
+
             string urlExpected = "http://www.seleniumhq.org/projects/webdriver/";
             string urlActual;
 
             IWebDriver webDriver = new OpenQA.Selenium.Chrome.ChromeDriver();
+            webDriver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(30));
+            webDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+            webDriver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(10));
 
             webDriver.Navigate().GoToUrl("http://www.google.com");
 
@@ -34,16 +38,24 @@ namespace SeleniumWebDriverSamples.Ejemplo2
 
             WebDriverWait wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
             wait.Until(d => d.FindElement(By.CssSelector("#rso > div:nth-child(1) > div:nth-child(1) > div > h3 > a")));
+            /*
+            IWebElement firstResult = webDriver.FindElement(By.CssSelector("#rso > div:nth-child(1) > div:nth-child(1) > div > h3 > a"));
+            urlActual = firstResult.GetAttribute("href");
+            */
 
-            webDriver.FindElement(By.CssSelector("#rso > div:nth-child(1) > div:nth-child(1) > div > h3 > a")).Click();
-
-            //System.Threading.Thread.Sleep(1000);
-
+            IWebElement firstResult = webDriver.FindElement(By.CssSelector("#rso > div:nth-child(1) > div:nth-child(1) > div > h3 > a"));
+            firstResult.Click();
+            System.Threading.Thread.Sleep(500);
             urlActual = webDriver.Url;
 
-            Assert.AreEqual(urlExpected, urlActual);
-
-            webDriver.Close();
+            try
+            {
+                Assert.AreEqual(urlExpected, urlActual);
+            }
+            finally
+            {
+                webDriver.Close();
+            }
         }
     }
 }
