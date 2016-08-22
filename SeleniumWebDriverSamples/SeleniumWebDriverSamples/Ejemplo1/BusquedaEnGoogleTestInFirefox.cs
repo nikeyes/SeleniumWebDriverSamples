@@ -12,7 +12,7 @@ namespace SeleniumWebDriverSamples.Ejemplo1
     /// Summary description for BusquedaEnGoogleTestInFirefox
     /// </summary>
     [TestClass]
-    public class Debug_BusquedaEnGoogleTestInFirefox
+    public class BusquedaEnGoogleTestInFirefox
     {
         [TestMethod]
         public void Cuando_Busco_Selenium_WebDriver_Entonces_El_Primer_Resultado_Es_La_Pagina_De_Selenium()

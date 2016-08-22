@@ -20,7 +20,7 @@ namespace SeleniumWebDriverSamples.Ejemplo2
             string urlExpected = "http://www.seleniumhq.org/projects/webdriver/";
             string urlActual;
 
-            IWebDriver webDriver = new FirefoxDriver();
+            IWebDriver webDriver = new OpenQA.Selenium.Chrome.ChromeDriver();
 
             webDriver.Navigate().GoToUrl("http://www.google.com");
 
@@ -30,14 +30,14 @@ namespace SeleniumWebDriverSamples.Ejemplo2
 
             cajaDeBusqueda.Submit();
 
-            System.Threading.Thread.Sleep(10000);
+            //System.Threading.Thread.Sleep(10000);
 
-            //WebDriverWait wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
-            //wait.Until(d => d.FindElement(By.CssSelector("#rso > div:nth-child(1) > div:nth-child(1) > div > h3 > a")));
+            WebDriverWait wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            wait.Until(d => d.FindElement(By.CssSelector("#rso > div:nth-child(1) > div:nth-child(1) > div > h3 > a")));
 
-            IWebElement primerLink = webDriver.FindElement(By.CssSelector("#rso > div:nth-child(1) > div:nth-child(1) > div > h3 > a"));
+            webDriver.FindElement(By.CssSelector("#rso > div:nth-child(1) > div:nth-child(1) > div > h3 > a")).Click();
 
-            primerLink.Click();
+            //System.Threading.Thread.Sleep(1000);
 
             urlActual = webDriver.Url;
 
