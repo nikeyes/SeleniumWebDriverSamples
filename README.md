@@ -1,2 +1,2 @@
 # SeleniumWebDriverSamples
-Samples set to learn Selenium Web Driver
+Conjunto de ejemplos para aprender Selenium Webdriver con C#
