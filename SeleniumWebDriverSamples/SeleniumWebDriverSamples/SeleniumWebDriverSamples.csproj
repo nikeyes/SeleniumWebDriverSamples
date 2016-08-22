@@ -61,7 +61,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Ejemplo1\BusquedaEnGoogleTestInFirefox.cs" />
+    <Compile Include="Ejemplo2\BusquedaEnGoogleTestInFirefox.cs" />
+    <Compile Include="Ejemplo1\Debug_BusquedaEnGoogleTestInFirefox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
