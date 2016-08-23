@@ -63,7 +63,6 @@
   <ItemGroup>
     <Compile Include="Ejemplo1\inicial\BusquedaEnGoogleTestInFirefox.cs" />
     <Compile Include="Ejemplo2\inicial\BusquedaEnGoogleTestInFirefox.cs" />
-    <Compile Include="Ejemplo2\resuelto\BusquedaEnGoogleTestInFirefox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
