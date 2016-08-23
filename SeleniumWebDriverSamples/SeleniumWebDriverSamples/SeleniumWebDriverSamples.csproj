@@ -61,13 +61,15 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Ejemplo2\BusquedaEnGoogleTestInFirefox.cs" />
-    <Compile Include="Ejemplo1\BusquedaEnGoogleTestInFirefox.cs" />
+    <Compile Include="Ejemplo1\inicial\BusquedaEnGoogleTestInFirefox.cs" />
+    <Compile Include="Ejemplo2\inicial\BusquedaEnGoogleTestInFirefox.cs" />
+    <Compile Include="Ejemplo2\resuelto\BusquedaEnGoogleTestInFirefox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
